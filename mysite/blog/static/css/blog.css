@@ -1,0 +1,84 @@
+/*  Rainbow preloade codepen.io */
+
+.draft_card {
+    position: relative;
+    border-radius: 1rem;
+}
+
+
+.techfont{
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.bigbrand{
+    font-size: 1.5em;
+
+}
+
+.centerstage{
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.postdate{
+    text-align: center;
+}
+
+.posttitle{
+    font-family: 'Merriweather', serif;
+    font-size: 3em;
+    text-align: center;
+}
+
+.postcontent{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+.btn-comment{
+    position: absolute;
+    right: 1rem;
+    top: auto;
+}
+
+.comment_box {
+
+    background-color: gray;
+
+}
+
+/* Rainbow preload codepen.io */ 
+
+
+ .wrapper { 
+    background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+    height: 100vh;
+ }
+/*   
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;}
+  
+  @-webkit-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @-moz-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @-o-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  }
+  @keyframes rainbow { 
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  } */

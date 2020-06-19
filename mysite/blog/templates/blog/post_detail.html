@@ -1,0 +1,64 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="bg-white px-5 py-2 mt-4 border border-2 draft_card">
+ <h1 class="posttitle">{{post.title}}</h1>
+ {% if post.published_date %}
+  <div class="date postdate">
+      {{post.published_date}}
+  </div>
+
+ {% else %}
+   <a class="btn btn-success  font-weight-bold " href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+
+ {% endif %}
+
+ <p class="postcontent">{{post.text|safe|linebreaksbr}}</p>
+
+ {% if user.is_authenticated %}
+   <a class="btn btn-info " role="button" aria-pressed="true" href="{% url 'post_edit' pk=post.pk %}">
+    Edit 
+  
+   </a>
+
+   <a class="btn btn-warning" role="button" aria-pressed="true" href="{% url 'post_remove' pk=post.pk %}">
+    Remove
+  
+   </a>
+
+{% endif %}
+
+<hr>
+<a class="btn btn-outline-primary btn-comment " href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+<hr>
+
+<div >
+     {% for comment in post.comments.all %}
+
+     <div class="mb-5">
+      <hr>
+          {% if user.is_authenticated or comment.approved_comment %}
+    
+          {{ comment.created_date }}
+          {% if not comment.approved_comment %}
+              <a class="btn btn-warning" href="{% url 'comment_remove' pk=comment.pk %}">Remove</a>
+              <a class="btn btn-success" href="{% url 'comment_approve' pk=comment.pk %}">OK</a>
+          {% endif %}
+    
+            <p>{{ comment.text|safe|linebreaks}}</p>
+            <p>Posted by: <strong>{{ comment.author }}</strong></p>
+    
+        {% endif %}
+        {% empty %}
+       
+     </div>
+
+    <p>No comments posted.</p>
+    <hr>
+
+     {% endfor %}
+
+
+</div>
+
+</div>
+{% endblock %}
